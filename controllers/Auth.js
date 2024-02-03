@@ -39,6 +39,7 @@ const register = async(req, res) => {
         const newUser = new UserAuth({
             username: req.body.username,
             password: hashedPassword,
+            role: req.body.role
         });
 
         await newUser.save();
