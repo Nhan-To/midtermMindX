@@ -1,4 +1,4 @@
-import { authRouter} from './authRouter.js';
+import { authRouter } from './publicRouter.js';
 import { userRouter } from './userRouter.js';
 
 const routes = [
@@ -19,7 +19,7 @@ const routesFn = (app) => {
             app.use(route.path, route.router);
         }
         else if (route.path === "/users") {
-            app.use(route.path, /*authenticated, authorization,*/ route.router);
+            app.use(route.path, route.router);
         }
     });
 }
